@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 1007
   m_ShowMode: 4
-  m_Title: Inspector
+  m_Title: Game
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 592}
   m_MaxSize: {x: 10000, y: 10000}
@@ -119,10 +119,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 957
-  m_MinSize: {x: 909, y: 542}
-  m_MaxSize: {x: 22004, y: 14042}
+  m_MinSize: {x: 910, y: 542}
+  m_MaxSize: {x: 22005, y: 14000}
   vertical: 1
-  controlID: 79912
+  controlID: 10115
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -146,10 +146,10 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 773
-  m_MinSize: {x: 909, y: 421}
-  m_MaxSize: {x: 22004, y: 10021}
+  m_MinSize: {x: 910, y: 442}
+  m_MaxSize: {x: 22005, y: 10000}
   vertical: 0
-  controlID: 79913
+  controlID: 10116
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -194,7 +194,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 231
     y: 0
-    width: 203
+    width: 206
     height: 773
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
@@ -218,9 +218,9 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 434
+    x: 437
     y: 0
-    width: 354
+    width: 351
     height: 773
   m_MinSize: {x: 277, y: 121}
   m_MaxSize: {x: 4002, y: 4021}
@@ -250,10 +250,10 @@ MonoBehaviour:
     y: 0
     width: 1132
     height: 773
-  m_MinSize: {x: 201, y: 421}
-  m_MaxSize: {x: 4001, y: 8021}
+  m_MinSize: {x: 201, y: 442}
+  m_MaxSize: {x: 4001, y: 8042}
   vertical: 1
-  controlID: 79914
+  controlID: 10117
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -461,7 +461,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Tree9
+    - Assets/Scripts
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 0
@@ -475,7 +475,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 06580000
     m_LastClickedID: 22534
-    m_ExpandedIDs: ffffffff000000006a3d00006c3d0000123e0000de420000e0420000ec42000040470000
+    m_ExpandedIDs: ffffffff00000000ce3d0000d03d0000d43d0000d63d0000d83d0000043e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -503,7 +503,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff000000006a3d00006c3d0000123e0000de420000e0420000ec42000040470000
+    m_ExpandedIDs: ffffffff00000000ce3d0000d03d0000d43d0000d63d0000d83d0000043e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -754,15 +754,15 @@ MonoBehaviour:
     serializedVersion: 2
     x: 231
     y: 73
-    width: 201
+    width: 204
     height: 752
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: f278feff4081feff3e5bffff7475ffff6efbffff6046000068460000
+      m_SelectedIDs: 1e25ffff
+      m_LastClickedID: -56034
+      m_ExpandedIDs: 963affff2af9ffff6efbffffb6470000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -806,9 +806,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 434
+    x: 437
     y: 73
-    width: 352
+    width: 349
     height: 752
   m_ViewDataDictionary: {fileID: 0}
   m_ObjectsLockedBeforeSerialization: []
@@ -859,9 +859,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 245.54181, y: 5.2025857, z: 247.0997}
+    m_Target: {x: 229.7698, y: 1.320343, z: 262.04398}
     speed: 2
-    m_Value: {x: 245.54181, y: 5.2025857, z: 247.0997}
+    m_Value: {x: 229.7698, y: 1.320343, z: 262.04398}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -908,13 +908,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.14632973, y: -0.07740254, z: 0.011375542, w: 0.98609215}
+    m_Target: {x: -0.17094773, y: 0.66763717, z: -0.1613578, w: -0.70630157}
     speed: 2
-    m_Value: {x: -0.14632972, y: 0.07740254, z: -0.011375541, w: -0.9860921}
+    m_Value: {x: -0.17094773, y: 0.6676372, z: -0.1613578, w: -0.70630157}
   m_Size:
-    m_Target: 2.884636
+    m_Target: 8.6602545
     speed: 2
-    m_Value: 2.884636
+    m_Value: 8.6602545
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1027,7 +1027,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 18016
+  m_LastSelectedObjectID: -56034
 --- !u!114 &22
 MonoBehaviour:
   m_ObjectHideFlags: 52
