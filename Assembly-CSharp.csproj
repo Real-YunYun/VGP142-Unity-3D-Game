@@ -65,6 +65,8 @@
   <ItemGroup>
     <None Include="Assets\Fantasy Skybox FREE\Readme.txt" />
     <None Include="Assets\Fantasy Skybox FREE\ReleaseNotes.txt" />
+    <None Include="Assets\SimpleLowPolyNature\Readme.txt" />
+    <None Include="Assets\SimpleLowPolyNature\Shaders\SimpleWater.shader" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

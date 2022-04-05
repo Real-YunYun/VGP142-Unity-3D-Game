@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     public float JumpHeight = 2.5f;
 
     public Transform GroundCheck;
-    public float groundDistance = 0.4f;
+    public float groundDistance = 0;
     public LayerMask groundMask;
 
     Vector3 Velocity;
@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
     {
         isGrounded = Physics.CheckSphere(GroundCheck.position, groundDistance, groundMask);
 
-        if (isGrounded && Velocity.y < 0) Velocity.y = -0.2f;
+        if (isGrounded && Velocity.y < 0) Velocity.y = 0f;
 
         float MoveX = Input.GetAxis("Horizontal");
         float MoveZ = Input.GetAxis("Vertical");
