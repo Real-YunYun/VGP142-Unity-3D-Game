@@ -35,7 +35,7 @@ public class MainCamera : MonoBehaviour
             mouseY = Input.GetAxis("Mouse Y") * (mouseSensitivity * 800) * Time.deltaTime;
 
             xRotation -= mouseY;
-            xRotation = Mathf.Clamp(xRotation, -25, 75);
+            xRotation = Mathf.Clamp(xRotation, -45, 75);
 
             this.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
             PlayerBody.Rotate(Vector3.up * mouseX);
