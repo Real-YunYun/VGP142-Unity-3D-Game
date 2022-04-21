@@ -21,10 +21,9 @@ public class EnemyFollow : MonoBehaviour
         Enemy.SetDestination(Player.position);
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Hit: " + other.gameObject.name);
-        if (other.gameObject.name == "Player")
+        if (collision.gameObject.name == "Player")
         {
 #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
