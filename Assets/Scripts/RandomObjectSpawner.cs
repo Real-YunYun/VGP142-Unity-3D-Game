@@ -12,6 +12,5 @@ public class RandomObjectSpawner : MonoBehaviour
         int randomInt = Mathf.RoundToInt(Random.Range(0, RandomSpawnList.Length - 1));
         Transform t = gameObject.GetComponent<Transform>();
         Instantiate(RandomSpawnList[randomInt], t.position, t.rotation);
-        Debug.Log("Spawned: " + randomInt);
     }
 }
