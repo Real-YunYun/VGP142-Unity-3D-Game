@@ -4,25 +4,13 @@ using UnityEngine;
 
 public class ProjectileHandler : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Enemy")
         {
-            Debug.Log("Hit! Enemy");
             other.gameObject.GetComponent<EnemyFollow>().TakeDamage(10, "head");
             Destroy(gameObject);
         }
+        Destroy(gameObject, 2f);
     }
 }

@@ -1,17 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using System.Collections; using System.Collections.Generic; using UnityEngine;
 
 public class ExitBox : MonoBehaviour
 {
-    public void OnTriggerEnter(Collider collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.tag == "Player")
-        {
-            #if UNITY_EDITOR
-                UnityEditor.EditorApplication.isPlaying = false;
-            #endif
-            Application.Quit();
-        }
+        if (other.gameObject.CompareTag("Player")) other.gameObject.GetComponent<PlayerController>().Health = 0;
+        if (other.gameObject.CompareTag("Enemy")) other.gameObject.GetComponent<EnemyFollow>().Health = 0;
     }
 }

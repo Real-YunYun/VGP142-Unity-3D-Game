@@ -13,7 +13,6 @@ public class RayCast : MonoBehaviour
     public float attenuationRadius = 5.0f;
     public LayerMask Layer;
 
-
     float AttackRange = 2f;
 
     void Update()
@@ -37,13 +36,8 @@ public class RayCast : MonoBehaviour
                 Debug.DrawLine(RayCast.origin, hit.point, Color.green);
                 hit.collider.gameObject.GetComponent<NavMeshAgent>().velocity = Vector3.zero;     
                 
-                if (Input.GetKeyDown(KeyCode.Q) && attack)
-                {
-                    hit.collider.gameObject.GetComponent<EnemyFollow>().TakeDamage(10, "punch");
-                } else if (Input.GetKeyDown(KeyCode.E) && attack)
-                {
-                    hit.collider.gameObject.GetComponent<EnemyFollow>().TakeDamage(10 , "kick");
-                }
+                if (Input.GetKeyDown(KeyCode.Q) && attack) hit.collider.gameObject.GetComponent<EnemyFollow>().TakeDamage(10, "punch");
+                if (Input.GetKeyDown(KeyCode.E) && attack) hit.collider.gameObject.GetComponent<EnemyFollow>().TakeDamage(10 , "kick");
             }
         }
     }

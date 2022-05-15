@@ -18,20 +18,18 @@ public class PlayerController : MonoBehaviour
     public float groundDistance = 0f;
     public LayerMask groundMask;
 
-    Canvas canvas;
-
     Vector3 Velocity;
     bool isGrounded;
     public bool IsDying = false;
     public int Health { get; set; }
     private bool Invincible { get; set; }
-
+    private bool MovementPowerUp { get; set; }
     public Light flashlight;
-    bool flashlightOn = false;
 
     void Start()
     {
-        Health = 100;   
+        Health = 100;
+        MovementPowerUp = false;
     }
 
     // Update is called once per frame
@@ -39,7 +37,6 @@ public class PlayerController : MonoBehaviour
     {
         if (CharController.enabled)
         {
-
             if (Health <= 0) Death();
             isGrounded = Physics.CheckSphere(GroundCheck.position, groundDistance, groundMask);
 
@@ -56,27 +53,15 @@ public class PlayerController : MonoBehaviour
             //Debug.Log("MoveX: " + MoveX + " MoveY: " + Velocity.y + " MoveZ: " + MoveZ);
 
             Vector3 Move = transform.right * MoveX + transform.forward * MoveZ;
-
             CharController.Move(Move * MoveSpeed * Time.deltaTime);
 
-            if (Input.GetButtonDown("Jump") && isGrounded)
-            {
-                Velocity.y = Mathf.Sqrt(JumpHeight * -2 * Gravity);
-            }
+            if (Input.GetButtonDown("Jump") && isGrounded) Velocity.y = Mathf.Sqrt(JumpHeight * -2 * Gravity);
 
             if (Input.GetKeyDown(KeyCode.Q)) Punch();
             if (Input.GetKeyDown(KeyCode.E)) Kick();
 
-            if (Input.GetKeyDown(KeyCode.F) && flashlightOn)
-            {
-                flashlightOn = false;
-                flashlight.enabled = false;
-            }
-            else if (Input.GetKeyDown(KeyCode.F) && !flashlightOn)
-            {
-                flashlightOn = true;
-                flashlight.enabled = true;
-            }
+            if (Input.GetKeyDown(KeyCode.F) && flashlight.enabled) flashlight.enabled = false;
+            else if (Input.GetKeyDown(KeyCode.F) && !flashlight.enabled) flashlight.enabled = true;
 
             Velocity.y += Gravity * Time.deltaTime;
             CharController.Move(Velocity * Time.deltaTime);
@@ -92,11 +77,13 @@ public class PlayerController : MonoBehaviour
         {
             Health -= value;
             StartCoroutine(IFrames());
-            Debug.Log("Damage Taken: " + value + " Health Remaining: " + Health);
+            //Debug.Log("Damage Taken: " + value + " Health Remaining: " + Health);
         }
     }
 
-    IEnumerator IFrames(float duration = 0.5f)
+    public void PowerUp(string type) { if (type == "Movement") StartCoroutine(ApplyPowerUp(type)); }
+
+    IEnumerator IFrames(float duration = 2f)
     {
         Invincible = true;
         if (duration > 0)
@@ -114,6 +101,24 @@ public class PlayerController : MonoBehaviour
 
         }
     }
+
+    IEnumerator ApplyPowerUp(string type, float duration = 5f)
+    {
+        MovementPowerUp = true;
+        if (type == "Movement")
+        {
+            MoveSpeed += 3f;
+            JumpHeight += 3f;
+        }
+        yield return new WaitForSeconds(duration);
+        if (type == "Movement")
+        {
+            MoveSpeed -= 3f;
+            JumpHeight -= 3f;
+        }
+        MovementPowerUp = false;
+    }
+
     public void Death()
     {
         /*

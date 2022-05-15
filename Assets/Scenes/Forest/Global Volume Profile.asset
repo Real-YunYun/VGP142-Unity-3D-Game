@@ -16,13 +16,13 @@ MonoBehaviour:
   m_AdvancedMode: 0
   lift:
     m_OverrideState: 1
-    m_Value: {x: 0.97931594, y: 0.9718175, z: 1, w: -0.0012749755}
+    m_Value: {x: 0.887056, y: 0.914489, z: 1, w: -0.023976449}
   gamma:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 0.99662745, z: 0.9999959, w: -0.2321664}
+    m_Value: {x: 1, y: 0.99662745, z: 0.9999959, w: -0.40791464}
   gain:
-    m_OverrideState: 1
-    m_Value: {x: 1, y: 0.75997645, z: 0.3592242, w: -0.14265338}
+    m_OverrideState: 0
+    m_Value: {x: 0.9719307, y: 1, z: 0.99615186, w: 0.19296274}
 --- !u!114 &-6847734329211360500
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -39,11 +39,11 @@ MonoBehaviour:
   m_AdvancedMode: 0
   threshold:
     m_OverrideState: 1
-    m_Value: 0.9
+    m_Value: 0.5
     min: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 0.1
+    m_Value: 1
     min: 0
   scatter:
     m_OverrideState: 0
@@ -141,11 +141,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c01700fd266d6914ababb731e09af2eb, type: 3}
   m_Name: DepthOfField
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   m_AdvancedMode: 0
   mode:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 2
   gaussianStart:
     m_OverrideState: 1
     m_Value: 20
