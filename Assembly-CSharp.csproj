@@ -60,6 +60,7 @@
     <Compile Include="Assets\Scripts\HealthBarHandler.cs" />
     <Compile Include="Assets\Scripts\MainCamera.cs" />
     <Compile Include="Assets\Scripts\MainMenuHandler.cs" />
+    <Compile Include="Assets\Scripts\Burning.cs" />
     <Compile Include="Assets\Scripts\Mud.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\EnemyFollow.cs" />
@@ -71,7 +72,6 @@
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\ExitBox.cs" />
     <Compile Include="Assets\Scripts\Spawnpoint.cs" />
-    <Compile Include="Assets\Scripts\Burning.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\SimplePixelUI\fonts\Font2\license.txt" />

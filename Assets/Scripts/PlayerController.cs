@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
@@ -94,10 +95,13 @@ public class PlayerController : MonoBehaviour
         else if (duration == -1)
         {
             yield return new WaitForSeconds(3f);
+            SceneManager.LoadScene("GameOver Menu");
+            /*
             #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
             #endif
             Application.Quit();
+             */
 
         }
     }
