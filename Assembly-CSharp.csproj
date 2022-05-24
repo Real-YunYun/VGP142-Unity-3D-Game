@@ -56,22 +56,26 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\ProjectileHandler.cs" />
     <Compile Include="Assets\Scripts\HealthBarHandler.cs" />
     <Compile Include="Assets\Scripts\MainCamera.cs" />
     <Compile Include="Assets\Scripts\MainMenuHandler.cs" />
     <Compile Include="Assets\Scripts\Burning.cs" />
     <Compile Include="Assets\Scripts\Mud.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\Effect.cs" />
     <Compile Include="Assets\Scripts\EnemyFollow.cs" />
     <Compile Include="Assets\Scripts\PickUp.cs" />
+    <Compile Include="Assets\Scripts\WeaponPickUp.cs" />
     <Compile Include="Assets\Scripts\Projectile.cs" />
     <Compile Include="Assets\Scripts\RayCast.cs" />
     <Compile Include="Assets\Scripts\RandomObjectSpawner.cs" />
     <Compile Include="Assets\Scripts\Helpers\Singleton.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Item.cs" />
     <Compile Include="Assets\Scripts\ExitBox.cs" />
     <Compile Include="Assets\Scripts\Spawnpoint.cs" />
+    <Compile Include="Assets\Scripts\Coin.cs" />
+    <Compile Include="Assets\Scripts\CoinsHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\SimplePixelUI\fonts\Font2\license.txt" />

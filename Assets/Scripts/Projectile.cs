@@ -12,11 +12,7 @@ public class Projectile : MonoBehaviour
     void Update()
     {
         
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            GameObject ball = Instantiate(Prefab, transform.position, transform.rotation);
-            ball.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(0, 0, ProjectileSpeed));
-        }
+
          
     }
 }

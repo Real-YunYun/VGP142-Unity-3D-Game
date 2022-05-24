@@ -9,10 +9,12 @@ public class Mud : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player") other.gameObject.GetComponent<PlayerController>().MoveSpeed /= 2f;
+        if (other.gameObject.tag == "Player") other.gameObject.GetComponent<PlayerController>().JumpHeight /= 3f;
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Player") other.gameObject.GetComponent<PlayerController>().MoveSpeed *= 2f;
+        if (other.gameObject.tag == "Player") other.gameObject.GetComponent<PlayerController>().JumpHeight *= 3f;
     }
 }

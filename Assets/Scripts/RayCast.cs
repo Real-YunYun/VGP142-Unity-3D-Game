@@ -18,10 +18,6 @@ public class RayCast : MonoBehaviour
     void Update()
     {
         var RayCast = new Ray(origin.transform.position, transform.forward);
-        var AttackRayCast = new Ray(origin.transform.position, transform.forward);
-
-        //Physics.Raycast(origin.transform.position, transform.forward, out hitInfo, rayRange, desiredLayers);
-
         var hits = Physics.SphereCastAll(RayCast, attenuationRadius, rayRange);
         var attack = Physics.Raycast(origin.position, origin.forward, AttackRange, Layer);
 

@@ -9,8 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 450800}
+  - component: {fileID: 7054785849899459521}
+  - component: {fileID: 2849796519752908826}
   - component: {fileID: 3387448}
   - component: {fileID: 2359026}
+  - component: {fileID: 7087017419646577097}
+  - component: {fileID: 2279108741031397508}
   m_Layer: 0
   m_Name: Grenade_Sulfur
   m_TagString: Untagged
@@ -27,11 +31,72 @@ Transform:
   m_GameObject: {fileID: 179448}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7054785849899459521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94586c965e0870949a0fb5c9f509241c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Grenade
+  Damage: 0
+  ItemEffect: {fileID: 2849796519752908826}
+  Target: {fileID: 0}
+  Fuse:
+    HasFuse: 1
+    Duration: 2.5
+  Proc:
+    CanProc: 0
+    ProcChance: 0
+--- !u!114 &2849796519752908826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 965729a0b52ace0499128677ea729529, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: 
+  Damage: 0
+  Particle: {fileID: 3575850458111664429, guid: e9ee73a614976314b9f8e3bdd291df6f, type: 3}
+  CanProc: 0
+  ProcEffects: []
+  Target: {fileID: 0}
+  OnHit:
+    IsOnHit: 0
+    HasDoT: 0
+    DoT_Duration: 0
+    Damage_Flat: 0
+    Damage_Coefficient: 0
+  OnKill:
+    IsOnKill: 0
+  AoE:
+    HasAoE: 1
+    Radius: 2.5
+    Damage_Flat: 50
+    Damage_Coefficient: 0
+  Piercing:
+    IsPiercing: 0
+    Piercing_Power: 0
+  Sticky:
+    IsSticky: 0
+    Sticky_Duration: 0
+  Other:
+    Death: 0
 --- !u!33 &3387448
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -81,3 +146,33 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &7087017419646577097
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179448}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 11e0aa3611e3840ecb8a4f54e9b9634d, type: 3}
+--- !u!54 &2279108741031397508
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179448}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

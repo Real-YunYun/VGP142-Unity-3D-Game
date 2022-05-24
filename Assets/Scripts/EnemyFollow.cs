@@ -10,12 +10,10 @@ public class EnemyFollow : MonoBehaviour
     public GameObject Drop;
     Animator Anim;
     [SerializeField] Transform origin;
-    public string TargetTag;
 
     float rayRange = 1.0f;
-    float attenuationRadius = 0.25f;
-    public LayerMask Layer;
     public float AggroDistance = 5f;
+    public int StartHealth = 250;
     public int Health { get; set; }
     public Canvas EnemyCanvas;
 
@@ -27,7 +25,7 @@ public class EnemyFollow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Health = 250;
+        Health = StartHealth;
         Enemy = this.gameObject.GetComponent<NavMeshAgent>();
         Anim = this.gameObject.GetComponent<Animator>();
         setRigidbodyState(true);
@@ -37,35 +35,35 @@ public class EnemyFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Health <= 0) Death();
-        else
+        if (Enemy.enabled)
         {
+            ShowUI();
             float dist = Vector3.Distance(this.transform.position, Player.transform.position);
+
             if (dist <= AggroDistance && Health > 0)
             {
                 Enemy.SetDestination(Player.transform.position);
                 ShowUI(true);
             }
-            else
-            {
-                Patrol();
-                ShowUI();
-            }
+            else Patrol();
             Anim.SetFloat("MoveX", Enemy.velocity.x);
             Anim.SetFloat("MoveZ", Enemy.velocity.z);
 
             var RayCast = new Ray(this.gameObject.transform.position, transform.forward);
-            var hits = Physics.SphereCastAll(RayCast, attenuationRadius, rayRange);
-            foreach (var hit in hits)
-            {
-                if (hit.collider.tag == TargetTag)
-                {
-                    Anim.Play("Punch");
-                    Player.GetComponent<PlayerController>().TakeDamage(10);
-                }
-            }
+            var hits = Physics.RaycastAll(origin.position, origin.forward, rayRange, (byte)128);
+            foreach (var hit in hits) if (hit.collider.tag == "Player") Anim.Play("Punch");
         }
+        else ShowUI(true);
     }
+
+    private void AttackRaycast(string AttackType)
+    {
+        var attack = Physics.RaycastAll(origin.position, origin.forward, rayRange);
+        Debug.DrawRay(origin.position, origin.forward, Color.red);
+        foreach (var hit in attack) if (hit.collider.tag == "Player") hit.collider.gameObject.GetComponent<PlayerController>().TakeDamage(10);
+    }
+
+    public void ResetAttack() {  }
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -74,6 +72,7 @@ public class EnemyFollow : MonoBehaviour
 
     public void Death()
     {
+        Health = 0;
         Enemy.enabled = false;
         Anim.enabled = false;
         setRigidbodyState(false);
@@ -96,6 +95,7 @@ public class EnemyFollow : MonoBehaviour
         else if (type == "head") Anim.Play("Hit Head");
         else if (type == "kick") Anim.Play("Hit Rib");
         else if (type == "punch") Anim.Play("Hit Punch");
+        else if (type == "slash") Anim.Play("Hit Punch");
 
     }
 
